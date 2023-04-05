@@ -1,0 +1,29 @@
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.container {
+    width: 1440px;
+    margin: 0px auto;
+    height: 800px;
+}
+
+.menu_home {
+    line-height: 0;
+    text-align: center;
+    margin: 0px auto;
+}
+
+.menu_home ul li {
+    display: inline-block;
+    padding: 10px;
+    line-height: unset;
+
+}
