@@ -12,7 +12,9 @@ const ProductDetail = (props: Iprops) => {
     return (
         <div>
             <h2>{currentProduct?.name}</h2>
+            <img src={currentProduct?.image} alt="" />
             <p>{currentProduct?.price}</p>
+            <p>{currentProduct?.desc}</p>
         </div>
     )
 }

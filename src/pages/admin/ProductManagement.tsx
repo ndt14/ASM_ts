@@ -17,8 +17,12 @@ interface IProps {
 }
 
 const ProductManagementPage = (props: IProps) => {
+
     const removeProduct = (id: number) => {
-        props.onRemove(id)
+        const stauts = confirm("bạn có muốn xóa")
+        if (stauts) {
+            props.onRemove(id)
+        }
     }
     const columns: ColumnsType<DataType> = [
         {
@@ -53,7 +57,7 @@ const ProductManagementPage = (props: IProps) => {
 
                 <Space size="middle">
                     <Button type="primary" style={{ backgroundColor: 'red' }} onClick={() => removeProduct(record.id)}>Remove</Button>
-                    <Button type="primary" ><Link to={`/admin/products/${record.id}/update`}>Update</Link></Button>
+                    <Button type="primary" ><Link to={`/admin/${record.id}/update`}>Update</Link></Button>
                 </Space>
             ),
         },
@@ -68,7 +72,7 @@ const ProductManagementPage = (props: IProps) => {
 
     return (
         <div>
-            <Button type='primary'><Link to={'/admin/products/add'}>Add New Product</Link></Button>
+            <Button type='primary'><Link to={'/admin/add'}>Add New Product</Link></Button>
             <Table columns={columns} dataSource={data} pagination={{ pageSize: 5 }} />
         </div>
     )
